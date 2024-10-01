@@ -1,0 +1,146 @@
+Aqui está o código completo para o jogo de “Adivinha o Número” com as funcionalidades desejadas. Ele usa HTML para a interface, CSS para a estilização, e JavaScript para a lógica do jogo, incluindo a geração de consequências em caso de erro.
+
+1. index.html
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinha o Número</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Adivinha o Número</h1>
+        <p>Digite um número entre 1 e 10 e tente a sorte!</p>
+
+        <input type="number" id="userInput" min="1" max="10" placeholder="Seu palpite" />
+        <button id="submitBtn">Tentar</button>
+        
+        <p id="result"></p>
+        <p id="consequence"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+2. style.css
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+h1 {
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+p#result {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+p#consequence {
+    color: red;
+    font-weight: bold;
+}
+
+3. script.js
+
+// Gerar um número aleatório entre 1 e 10
+const randomNumber = Math.floor(Math.random() * 10) + 1;
+console.log("Número gerado:", randomNumber);  // Para debug durante o desenvolvimento
+
+// Consequências em caso de erro
+const consequences = [
+    "Você precisa fazer 10 flexões!",
+    "Agora você deve beber um copo de água.",
+    "Cante sua música favorita!",
+    "Dê uma volta pela casa!",
+    "Você perdeu, dance por 30 segundos!",
+    "Faça uma careta engraçada!",
+    "Conte uma piada para alguém!",
+    "Faça uma corrida no lugar por 20 segundos.",
+    "Você precisa fazer uma tarefa que estava adiando!",
+    "Tente novamente!"
+];
+
+document.getElementById("submitBtn").addEventListener("click", function() {
+    const userInput = parseInt(document.getElementById("userInput").value);
+    const resultElement = document.getElementById("result");
+    const consequenceElement = document.getElementById("consequence");
+
+    if (!userInput || userInput < 1 || userInput > 10) {
+        resultElement.textContent = "Por favor, insira um número entre 1 e 10.";
+        resultElement.style.color = "red";
+        consequenceElement.textContent = "";
+    } else if (userInput === randomNumber) {
+        resultElement.textContent = "Parabéns! Você acertou!";
+        resultElement.style.color = "green";
+        consequenceElement.textContent = "";
+    } else {
+        resultElement.textContent = "Errou! Tente novamente.";
+        resultElement.style.color = "red";
+        // Exibir uma consequência aleatória
+        const randomConsequence = consequences[Math.floor(Math.random() * consequences.length)];
+        consequenceElement.textContent = randomConsequence;
+    }
+});
+
+Explicação do Código:
+
+	1.	HTML (index.html):
+	•	Define a estrutura do jogo, incluindo um campo de entrada para o número, um botão para tentar a sorte e duas áreas de texto para exibir o resultado e a consequência.
+	2.	CSS (style.css):
+	•	Aplica uma estilização simples à página, com um design limpo e responsivo.
+	3.	JavaScript (script.js):
+	•	Gera um número aleatório entre 1 e 10.
+	•	Verifica o número inserido pelo usuário ao clicar no botão.
+	•	Se o usuário acertar, exibe uma mensagem de sucesso.
+	•	Se errar, exibe uma mensagem de erro e uma consequência aleatória de uma lista de consequências.
+
+Como rodar o projeto:
+
+	1.	Baixe os arquivos e coloque-os na estrutura correta do projeto.
+	2.	Abra o arquivo index.html em qualquer navegador e o jogo estará pronto para jogar.
+
+Você pode subir esse código no GitHub e ele estará pronto para ser jogado diretamente no navegador!
