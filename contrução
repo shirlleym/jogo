@@ -1,5 +1,3 @@
-Aqui está o código completo para o jogo de “Adivinha o Número” com as funcionalidades desejadas. Ele usa HTML para a interface, CSS para a estilização, e JavaScript para a lógica do jogo, incluindo a geração de consequências em caso de erro.
-
 1. index.html
 
 <!DOCTYPE html>
@@ -125,22 +123,3 @@ document.getElementById("submitBtn").addEventListener("click", function() {
         consequenceElement.textContent = randomConsequence;
     }
 });
-
-Explicação do Código:
-
-	1.	HTML (index.html):
-	•	Define a estrutura do jogo, incluindo um campo de entrada para o número, um botão para tentar a sorte e duas áreas de texto para exibir o resultado e a consequência.
-	2.	CSS (style.css):
-	•	Aplica uma estilização simples à página, com um design limpo e responsivo.
-	3.	JavaScript (script.js):
-	•	Gera um número aleatório entre 1 e 10.
-	•	Verifica o número inserido pelo usuário ao clicar no botão.
-	•	Se o usuário acertar, exibe uma mensagem de sucesso.
-	•	Se errar, exibe uma mensagem de erro e uma consequência aleatória de uma lista de consequências.
-
-Como rodar o projeto:
-
-	1.	Baixe os arquivos e coloque-os na estrutura correta do projeto.
-	2.	Abra o arquivo index.html em qualquer navegador e o jogo estará pronto para jogar.
-
-Você pode subir esse código no GitHub e ele estará pronto para ser jogado diretamente no navegador!
