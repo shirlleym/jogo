@@ -1,0 +1,28 @@
+# Ignorar arquivos gerados pelo sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar pastas do editor de código
+.vscode/
+.idea/
+
+# Ignorar logs
+*.log
+
+# Ignorar arquivos temporários do sistema
+*.tmp
+*.temp
+
+# Ignorar arquivos de cache do navegador (se estiver usando em dev)
+.cache/
+
+# Ignorar pacotes e dependências (caso use npm ou outro gerenciador)
+node_modules/
+dist/
+
+# Ignorar arquivos de build
+*.out
+*.o
+
+# Ignorar arquivos de compilação (se usar algum tipo de transpilador como Babel)
+build/
