@@ -90,7 +90,7 @@ console.log("Número gerado:", randomNumber);  // Para debug durante o desenvolv
 
 // Consequências em caso de erro
 const consequences = [
-    "Você precisa fazer 10 flexões!",
+    "Escolha alguem para falar uma verdade sobre alguém do grupo!",
     "Agora você deve beber um copo de água.",
     "Cante sua música favorita!",
     "Dê uma volta pela casa!",
